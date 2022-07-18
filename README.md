@@ -1,5 +1,9 @@
 # dictionary-ordinal-number-notation
 
+Commentary by author:  
+
+📖 [辞書順記数法 (Dictionary Ordinal Number Notation)](https://crieit.net/posts/Dictionary-Ordinal-Number-Notation)  
+
 # Install
 
 ```shell
