@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="dicordnum",
-    version="1.2.0",
+    version="1.3.0",
     author="muzudho",
     author_email="muzudho1@gmail.com",
     description="Dictionary ordinal number notation package",

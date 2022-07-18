@@ -4,7 +4,7 @@ python -m test
 from src.dicordnum import DicOrdNum
 
 test_data = [
-    # 数値
+    # 正の整数
     ['0', DicOrdNum(0)],
     ['9', DicOrdNum(9)],
     ['10', DicOrdNum(10)],
@@ -13,7 +13,7 @@ test_data = [
     ['999', DicOrdNum(999)],
     ['1000', DicOrdNum(1000)],
 
-    # 文字列
+    # 正の整数の文字列
     ['"0"', DicOrdNum('0')],
     ['"9"', DicOrdNum('9')],
     ['"10"', DicOrdNum('10')],
@@ -21,6 +21,18 @@ test_data = [
     ['"100"', DicOrdNum('100')],
     ['"999"', DicOrdNum('999')],
     ['"1000"', DicOrdNum('1000')],
+
+    # 辞書順記数法
+    ['"A77"', DicOrdNum('A77')],
+    ['"AA777"', DicOrdNum('AA777')],
+    ['"AAA7777"', DicOrdNum('AAA7777')],
+    ['"AAAA77777"', DicOrdNum('AAAA77777')],
+
+    # 小文字, snake_case への寛容
+    ['"a77"', DicOrdNum('a77')],
+    ['"aa777"', DicOrdNum('aa777')],
+    ['"aaa7777"', DicOrdNum('aaa7777')],
+    ['"aaaa77777"', DicOrdNum('aaaa77777')],
 ]
 
 for datum in test_data:

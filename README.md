@@ -93,3 +93,12 @@ AA100
 ```
 
 It's ok.  
+
+👇 For snake_case
+
+```plaintext
+7
+a77
+aa777
+aaa7777
+```

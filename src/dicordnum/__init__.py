@@ -4,7 +4,7 @@ import re
 class DicOrdNum:
     """Dictionary Ordinal Number"""
 
-    pattern = re.compile(r"(A*)(\d+)")
+    pattern = re.compile(r"([Aa]*)(\d+)")
 
     def __init__(self, value=0):
 
