@@ -26,7 +26,9 @@ python -m pip install --upgrade pip
 👉  └── 📄 setup.py  
 ```
 
-👇 buildパッケージをインストール  
+２回目以降のアップロードでは、バージョン番号を上げてほしい  
+
+👇 （していなければ）buildパッケージをインストール  
 
 ```shell
 python.exe -m pip install --upgrade build
@@ -42,13 +44,13 @@ python.exe -m build
 
 ```plaintext
     ├── 📂 dist
-    │       ├── 📄 パッケージ名-バージョン-py3-none-any.whl
-    │       └── 📄 パッケージ名-バージョン.tar.gz
+👉  │       ├── 📄 パッケージ名-バージョン-py3-none-any.whl
+👉  │       └── 📄 パッケージ名-バージョン.tar.gz
     ├── 📂 src
     │   └── 📂 パッケージ名
     │       └── 📄 __init__.py
-👉  ├── 📄 setup.cfg  
-👉  └── 📄 setup.py  
+    ├── 📄 setup.cfg  
+    └── 📄 setup.py  
 ```
 
 👇 まず、テスト環境へのアップロードを試します  
@@ -59,6 +61,8 @@ python.exe -m twine upload --repository testpypi dist/* --verbose
 ```
 
 ログインに成功すると、アップロードが行われ、 URL が出てくるのでアクセスしてください  
+
+（必要ないかもしれませんが） Git Hub などのリポジトリ―を利用しているなら、コミットしていないファイルがあればコミットしておくといいかもしれません  
 
 👇 本番です  
 
