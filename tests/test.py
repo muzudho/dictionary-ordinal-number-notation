@@ -1,5 +1,5 @@
 """
-python -m test
+python -m tests.test
 """
 from src.dicordnum import DicOrdNum
 
