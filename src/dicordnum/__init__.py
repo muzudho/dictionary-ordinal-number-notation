@@ -22,7 +22,7 @@ class DicOrdNum:
                 # 桁数比較
                 if len(prefix) + 1 == len(numeric):
                     # Aの個数が合っていた
-                    self._num = int(numeric)
+                    self._number = int(numeric)
                 else:
                     # Aの個数が合っていない
                     raise ValueError(f"not dictionary ordinal number: {value}")
@@ -36,11 +36,15 @@ class DicOrdNum:
                 raise ValueError(f"not dictionary ordinal number: {value}")
             else:
                 # 正の数だ
-                self._num = value
+                self._number = value
 
     def __str__(self):
-        figure = len(str(self._num))
+        figure = len(str(self._number))
         prefix = ""
         for i in range(1, figure):
             prefix += "A"
-        return f"{prefix}{self._num}"
+        return f"{prefix}{self._number}"
+
+    @property
+    def number(self):
+        return self._number
