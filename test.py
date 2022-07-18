@@ -1,5 +1,5 @@
-import traceback
-from dicordnum import DicOrdNum
+# import traceback
+from src.dicordnum import DicOrdNum
 
 print(f"0 --> {str(DicOrdNum(0))}")
 print(f"9 --> {str(DicOrdNum(9))}")

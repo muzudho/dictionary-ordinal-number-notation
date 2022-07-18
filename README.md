@@ -1,9 +1,9 @@
 # dictionary-ordinal-number-notation
 
-# Test
+# Install
 
 ```shell
-python -m test
+pip install dicordnum
 ```
 
 # Explanation
