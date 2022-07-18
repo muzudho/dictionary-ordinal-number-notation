@@ -1,4 +1,6 @@
-# import traceback
+"""
+python -m test
+"""
 from src.dicordnum import DicOrdNum
 
 print(f"0 --> {str(DicOrdNum(0))}")
@@ -26,19 +28,17 @@ print(f"'AA999' --> {str(DicOrdNum('999'))}")
 print(f"'AAA1000' --> {str(DicOrdNum('1000'))}")
 
 try:
-    print(f"-1 --> {str(DicOrdNum('-1'))} is bad")
+    print(f"[Error] -1 --> {str(DicOrdNum('-1'))}")
 except:
     print(f"-1 is not DicOrdNum")
-    # t = traceback.format_exc()
-    # print(t)
 
 # Aの個数が合っているか確認します
 try:
-    print(f"A1 --> {str(DicOrdNum('A1'))} is bad")
+    print(f"[Error] A1 --> {str(DicOrdNum('A1'))}")
 except:
     print(f"A1 is not DicOrdNum")
 
 try:
-    print(f"AA10 --> {str(DicOrdNum('AA10'))} is bad")
+    print(f"[Error] AA10 --> {str(DicOrdNum('AA10'))}")
 except:
     print(f"AA10 is not DicOrdNum")
