@@ -1,5 +1,13 @@
 # dictionary-ordinal-number-notation
 
+# Test
+
+```shell
+python -m test
+```
+
+# Explanation
+
 ```plaintext
 1
 2
@@ -83,3 +91,5 @@ A98
 A99
 AA100
 ```
+
+It's ok.  
