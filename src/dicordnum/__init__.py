@@ -19,13 +19,37 @@ class DicOrdNum:
                 prefix = result.group(1)
                 numeric = result.group(2)
 
-                # 桁数比較
-                if len(prefix) + 1 == len(numeric):
-                    # Aの個数が合っていた
-                    self._number = int(numeric)
+                if prefix[:1].upper() == 'A':
+                    # 正の整数
+                    #
+                    # 桁数比較
+                    if len(prefix) + 1 == len(numeric):
+                        # Aの個数が合っていた
+                        self._number = int(numeric)
+                    else:
+                        # Aの個数が合っていない
+                        raise ValueError(
+                            f"not dictionary ordinal number: {value}")
+
                 else:
-                    # Aの個数が合っていない
-                    raise ValueError(f"not dictionary ordinal number: {value}")
+                    # 負の整数
+                    #
+                    # 桁数比較
+                    if len(prefix) == len(numeric):
+                        # '_' の個数が合っていた
+                        figure = len(numeric)
+
+                        modulo = 1
+                        for i in range(0, figure):
+                            modulo *= 10
+
+                        self._number = -1*(modulo - int(numeric))
+
+                    else:
+                        # '_' の個数が合っていない
+                        raise ValueError(
+                            f"not dictionary ordinal number: {value}")
+
             else:
                 # 構文エラー
                 raise ValueError(f"not dictionary ordinal number: {value}")

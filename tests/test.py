@@ -52,11 +52,17 @@ test_data = [
     ['"-999"', DicOrdNum('-999'), '___001'],
     ['"-1000"', DicOrdNum('-1000'), '____9000'],
 
-    # 辞書順記数法
+    # 辞書順記数法 正の整数
     ['"A77"', DicOrdNum('A77'), 'A77'],
     ['"AA777"', DicOrdNum('AA777'), 'AA777'],
     ['"AAA7777"', DicOrdNum('AAA7777'), 'AAA7777'],
     ['"AAAA77777"', DicOrdNum('AAAA77777'), 'AAAA77777'],
+
+    # 辞書順記数法 負の整数
+    ['"__88"', DicOrdNum('__88'), '__88'],
+    ['"___888"', DicOrdNum('___888'), '___888'],
+    ['"____8888"', DicOrdNum('____8888'), '____8888'],
+    ['"_____88888"', DicOrdNum('_____88888'), '_____88888'],
 
     # 小文字, snake_case への寛容
     ['"a77"', DicOrdNum('a77'), 'A77'],
@@ -66,19 +72,41 @@ test_data = [
 ]
 
 for datum in test_data:
-    if f"{datum[1]}" == datum[2]:
-        print(f"{datum[0]} --> {datum[1]} {datum[1].number}")
+    if f'{datum[1]}' == datum[2]:
+        print(f'{datum[0]} --> "{datum[1]}" {datum[1].number}')
     else:
         print(
-            f"[Error] {datum[0]} --> {datum[1]} {datum[1].number} Expected: {datum[2]}")
+            f'[Error] {datum[0]} --> "{datum[1]}" {datum[1].number} Expected: {datum[2]}')
 
 # 間違ったAの個数を例外にできるか確認します
 try:
-    print(f"[Error] A1 --> {DicOrdNum('A1')}")
+    print(f'[Error] "A1" --> {DicOrdNum("A1")}')
 except:
-    print(f"A1 is not DicOrdNum")
+    print(f'"A1" is not DicOrdNum')
 
 try:
-    print(f"[Error] AA10 --> {DicOrdNum('AA10')}")
+    print(f'[Error] "AA10" --> {DicOrdNum("AA10")}')
 except:
-    print(f"AA10 is not DicOrdNum")
+    print(f'"AA10" is not DicOrdNum')
+
+# 間違った '_' の個数を例外にできるか確認します
+try:
+    print(f'[Error] "_90" --> {DicOrdNum("_90")}')
+except:
+    print(f'"_90" is not DicOrdNum')
+
+try:
+    print(f'[Error] "__900" --> {DicOrdNum("__900")}')
+except:
+    print(f'"__900" is not DicOrdNum')
+
+# 'A' と '_' の混合を例外にできるか確認します
+try:
+    print(f'[Error] "_A90" --> {DicOrdNum("_A90")}')
+except:
+    print(f'"_A90" is not DicOrdNum')
+
+try:
+    print(f'[Error] "A_90" --> {DicOrdNum("A_90")}')
+except:
+    print(f'"A_90" is not DicOrdNum')
