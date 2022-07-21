@@ -76,7 +76,7 @@ for datum in test_data:
         print(f'{datum[0]} --> "{datum[1]}" {datum[1].number}')
     else:
         print(
-            f'[Error] {datum[0]} --> "{datum[1]}" {datum[1].number} Expected: {datum[2]}')
+            f'[Error] {datum[0]} --> "{datum[1]}" {datum[1].number} Expected: "{datum[2]}"')
 
 # 間違ったAの個数を例外にできるか確認します
 try:
