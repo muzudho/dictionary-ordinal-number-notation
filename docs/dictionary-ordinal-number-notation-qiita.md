@@ -90,6 +90,7 @@
 
 # 関連する記事
 
+📖 [Crieit版 辞書順記数法 (Dictionary Ordinal Number Notation) を解説しようぜ（＾～＾）？](https://crieit.net/posts/Dictionary-Ordinal-Number-Notation)  
 📖 [数珠玉記数法](https://crieit.net/posts/Beads-Nested-Number-Notation) - 組み合わせて使える  
 📖 [電脳記数法](https://crieit.net/posts/Cyber-Number-Notation) - 辞書順記数法と 数珠玉記数法を組み合わせたもの  
 
